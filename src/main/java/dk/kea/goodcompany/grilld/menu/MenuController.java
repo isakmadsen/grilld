@@ -39,12 +39,7 @@ public class MenuController {
         model.put("menu", new Menu());
         return "menu/findMenu";
     }
-//    @GetMapping("/menu")
-//    public String movie(Model model) {
-//        List<Menu> menuList = this.menuRepo.findMenu();
-//        model.addAttribute("menu" , menuList);
-//        return "menu/menuList";
-//    }
+
     @GetMapping("/menu")
     public String processFindForm(Menu menu, BindingResult result, Map<String, Object> model) {
 
@@ -70,6 +65,7 @@ public class MenuController {
             return "menu/menuList";
         }
     }
+
 
     @GetMapping("/menu/{menuId}/edit")
     public String initUpdateMenuForm(@PathVariable("menuId") int menuId, Model model) {
