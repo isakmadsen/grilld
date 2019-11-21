@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:a="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Menu</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+
+
+    <body>
+
+
+<h2>Dish Info</h2>
+
+
+<table class="table table-striped" th:object="${menu}">
+    <tr>
+        <th>Dish</th>
+        <td><b th:text="*{name}"></b></td>
+    </tr>
+
+    <tr>
+        <th>Description</th>
+        <td th:text="*{description}" /></td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td th:text="*{price}" /></td>
+    </tr>
+    <tr>
+        <th>Category</th>
+        <td th:text="*{category}" /></td>
+    </tr>
+</table>
+
+<a th:href="@{{id}/edit(id=${menu.id})}" class="btn btn-default">Edit
+    Menu</a>
+
+</body>
+
+</html>
+
