@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:a="http://www.w3.org/1999/xhtml">
-<head>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
         <meta charset="UTF-8">
-        <title>Menu</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+        <title>Home</title>
+        <link th:replace="fragments :: bootstrap_head">
     </head>
-
-<body>
+    <body>
+        <div class>
+            <div th:replace="fragments :: navbar"></div>
 
 <h2>Find Menu</h2>
 
@@ -36,5 +36,9 @@
 <br />
 <a class="btn btn-default" th:href="@{/menu/new}">Add Menu</a>
 
-</body>
+            <div th:replace="fragments :: footer"></div>
+
+        </div>
+        <div th:replace="fragments :: bootstrap_body"></div>
+    </body>
 </html>

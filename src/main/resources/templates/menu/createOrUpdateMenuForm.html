@@ -1,53 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:a="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" >
   <head>
     <meta charset="UTF-8">
-    <title>Menu</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <title>Create or update menu</title>
+    <link th:replace="fragments :: bootstrap_head">
   </head>
 
   <body>
+    <div class>
+    <div th:replace="fragments :: navbar"></div>
 
-  <h2>Menu</h2>
-  <form th:object="${menu}" method="post" onsubmit=" return isEmpty(this)">
-    <div class="form-group">
-      <label for="dish">Dish</label>
-      <input  type="text" th:field="${menu.name}"  id="dish" placeholder="Dish">
-    </div>
-    <div class="form-group">
-      <label for="description">Description</label>
-      <input  type="text" th:field="${menu.description}"  id="description" placeholder="Description">
-    </div>
-    <div class="form-group">
-      <label for="price">Price</label>
-      <input  type="text" th:field="${menu.price}"  id="price" placeholder="Price">
-    </div>
-    <div class="form-group">
-      <label for="category">Category</label>
-      <input  type="text" th:field="${menu.category}"  id="category" placeholder="Category">
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button
-          th:with="text=${menu['new']} ? 'Add Menu' : 'Update Menu'"
-          class="btn btn-default" type="submit" th:text="${text}">Add Menu</button>
-      </div>
-    </div>
-  </form>
+      <main class="flex-fill">
+        <h2>Menu</h2>
+        <form th:object="${menu}" method="post" onsubmit=" return isEmpty(this)">
+          <div class="form-group">
+            <label for="dish">Dish</label>
+            <input  type="text" th:field="${menu.name}"  id="dish" placeholder="Dish">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input  type="text" th:field="${menu.description}"  id="description" placeholder="Description">
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input  type="text" th:field="${menu.price}"  id="price" placeholder="Price">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input  type="text" th:field="${menu.category}"  id="category" placeholder="Category">
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button
+                th:with="text=${menu['new']} ? 'Add Menu' : 'Update Menu'"
+                class="btn btn-default" type="submit" th:text="${text}">Add Menu</button>
+            </div>
+          </div>
+        </form>
 
-    <script>
-      //function that checks if there is an empty field in the form
-      function isEmpty(form){
-        var x=form.getElementsByTagName("input");
-        for(var i=0;i<x.length;i++){
-          if(x[i].value==0 || x[i].value==""){
-            alert("Please insert " + x[i].id+ "!");
-            return false;
-          }
-        }
-        return true;
-      }
-    </script>
+          <script>
+            //function that checks if there is an empty field in the form
+            function isEmpty(form){
+              var x=form.getElementsByTagName("input");
+              for(var i=0;i<x.length;i++){
+                if(x[i].value==0 || x[i].value==""){
+                  alert("Please insert " + x[i].id+ "!");
+                  return false;
+                }
+              }
+              return true;
+            }
+          </script>
+      </main>
+
+      <div th:replace="fragments :: footer"></div>
+
+    </div>
+    <div th:replace="fragments :: bootstrap_body"></div>
   </body>
 </html>
