@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login Page</title>
+    <title>Customer</title>
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/"><img alt="" src="/images/logo2.png" style="max-height: 60px"></a>
     <button aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
@@ -36,14 +35,8 @@
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
-                   href="#" id="navbarDropdownMenuLink">Manage</a>
-                <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                    <a class="dropdown-item" href="/login/1">Manager Login</a>
-                    <a class="dropdown-item" href="/login/2">Staff Login</a>
-                    <a class="dropdown-item" href="/login/3">Customer Login</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Log Out</a>
             </li>
 
 
@@ -54,7 +47,6 @@
         </form>
     </div>
 </nav>
-
 <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -66,21 +58,7 @@
 <br>
 <br>
 
-<div class="container">
-    <form action="/login" class="form-horizontal" method="post">
-        <p>Username: <input class="form-control" name="username" type="text"></p>
-        <p>Password: <input class="form-control" name="password" type="password"></p>
-        <input class="btn btn-outline-success" type="submit" value="Login"/>
-    </form>
-</div>
-
-<br>
-
-<p>
-    Manager: manager | 1234<br>
-    Staff: staff | 1234<br>
-    Customer: customer | 1234
-</p>
+<p> Customer Account</p>
 
 </body>
 </html>
