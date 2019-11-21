@@ -4,12 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -18,7 +20,6 @@ public class MenuController {
     private static final String VIEWS_MENU_CREATE_OR_UPDATE_FORM = "menu/createOrUpdateMenuForm";
 
     private final MenuRepository menuRepo;
-
 
 
     public MenuController(MenuRepository menuRepo) {
