@@ -14,4 +14,37 @@ public class Menu extends NamedEntity {
     @Column(name= "description"  )
     @NotNull
     private String description;
+
+    @Column(name = "price")
+    @NotNull
+    private Double price;
+
+    @Column(name = "category")
+    @NotNull
+    private String category;
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }
