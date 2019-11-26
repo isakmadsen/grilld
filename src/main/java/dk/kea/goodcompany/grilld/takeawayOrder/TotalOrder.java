@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
+import java.sql.Time;
 
 @Entity
 @Table(name="total_orders")
@@ -19,6 +20,10 @@ public class TotalOrder extends BaseEntity {
   @Column(name = "date")
   @NotNull
   private Date date;
+
+  @Column(name = "time")
+  @NotNull
+  private Time time;
 
   @Column(name = "customer_id")
   @NotNull
@@ -38,6 +43,14 @@ public class TotalOrder extends BaseEntity {
 
   public void setDate(Date date) {
     this.date = date;
+  }
+
+  public Time getTime() {
+    return time;
+  }
+
+  public void setTime(Time time) {
+    this.time = time;
   }
 
   public int getCustomerId() {

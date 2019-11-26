@@ -28,9 +28,6 @@ public class OrderItem extends BaseEntity {
   @NotNull
   private int quantity;
 
-  @Column(name = "customer_id")
-  @NotNull
-  private int customerId;
 
   public int getTotalOrderId() {
     return totalOrderId;
@@ -63,14 +60,5 @@ public class OrderItem extends BaseEntity {
   public void setQuantity(int quantity) {
     this.quantity = quantity;
   }
-
-  public int getCustomerId() {
-    return customerId;
-  }
-
-  public void setCustomerId(int customerId) {
-    this.customerId = customerId;
-  }
-
 
 }
