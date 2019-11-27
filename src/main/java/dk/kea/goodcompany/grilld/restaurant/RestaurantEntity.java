@@ -8,6 +8,8 @@ public class RestaurantEntity {
     private Integer id;
     private String name;
 
+    //TODO - Whats Up With This?
+
     @Id
     @Column(name = "id", nullable = false)
     public Integer getId() {
@@ -36,9 +38,7 @@ public class RestaurantEntity {
         RestaurantEntity that = (RestaurantEntity) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-
-        return true;
+        return name != null ? name.equals(that.name) : that.name == null;
     }
 
     @Override

@@ -10,6 +10,8 @@ import javax.persistence.Table;
 public class PaymentEntity {
     private Integer id;
 
+    //TODO - Whats Up With This?
+
     @Id
     @Column(name = "id", nullable = false)
     public Integer getId() {
@@ -27,9 +29,7 @@ public class PaymentEntity {
 
         PaymentEntity that = (PaymentEntity) o;
 
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-
-        return true;
+        return id != null ? id.equals(that.id) : that.id == null;
     }
 
     @Override

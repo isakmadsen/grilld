@@ -1,4 +1,4 @@
-package dk.kea.goodcompany.grilld.employee;
+package dk.kea.goodcompany.grilld.platform_users.employee;
 
 import javax.persistence.*;
 
@@ -8,6 +8,10 @@ public class EmployeesEntity {
     private Integer id;
     private String firstName;
     private String lastName;
+    private String username;
+    private String password;
+
+    //TODO - Whats Up With This?
 
     @Id
     @Column(name = "id", nullable = false)
@@ -39,6 +43,26 @@ public class EmployeesEntity {
         this.lastName = lastName;
     }
 
+    @Basic
+    @Column(name = "username", nullable = true, length = 255)
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Basic
+    @Column(name = "password", nullable = true, length = 255)
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,9 +72,18 @@ public class EmployeesEntity {
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
+        return lastName != null ? lastName.equals(that.lastName) : that.lastName == null;
+    }
 
-        return true;
+    @Override
+    public String toString() {
+        return "EmployeesEntity{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 
     @Override

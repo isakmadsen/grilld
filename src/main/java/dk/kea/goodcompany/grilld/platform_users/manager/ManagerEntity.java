@@ -1,4 +1,4 @@
-package dk.kea.goodcompany.grilld.manager;
+package dk.kea.goodcompany.grilld.platform_users.manager;
 
 import javax.persistence.*;
 
@@ -8,6 +8,10 @@ public class ManagerEntity {
     private Integer id;
     private String firstName;
     private String lastName;
+    private String username;
+    private String password;
+
+    //TODO - Whats Up With This?
 
     @Id
     @Column(name = "id", nullable = false)
@@ -39,18 +43,35 @@ public class ManagerEntity {
         this.lastName = lastName;
     }
 
+    @Basic
+    @Column(name = "username", nullable = true, length = 255)
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Basic
+    @Column(name = "password", nullable = true, length = 255)
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ManagerEntity that = (ManagerEntity) o;
-
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
-
-        return true;
+    public String toString() {
+        return "ManagerEntity{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 
     @Override
