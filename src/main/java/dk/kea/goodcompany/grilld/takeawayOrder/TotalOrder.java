@@ -25,6 +25,7 @@ public class TotalOrder extends BaseEntity {
   @NotNull
   private Time time;
 
+
   @Column(name = "customer_id")
   @NotNull
   private int customerId;

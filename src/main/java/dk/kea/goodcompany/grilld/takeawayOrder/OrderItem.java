@@ -12,13 +12,7 @@ import javax.validation.constraints.NotNull;
 @Table(name="order_items")
 public class OrderItem extends BaseEntity {
 
-  @Column(name = "total_order_id")
-  @NotNull
-  private int totalOrderId;
 
-  @Column(name = "item")
-  @NotNull
-  private String item;
 
   @Column(name= "price" )
   @NotNull
@@ -29,21 +23,7 @@ public class OrderItem extends BaseEntity {
   private int quantity;
 
 
-  public int getTotalOrderId() {
-    return totalOrderId;
-  }
 
-  public void setTotalOrderId(int totalOrderId) {
-    this.totalOrderId = totalOrderId;
-  }
-
-  public String getItem() {
-    return item;
-  }
-
-  public void setItem(String item) {
-    this.item = item;
-  }
 
   public double getPrice() {
     return price;

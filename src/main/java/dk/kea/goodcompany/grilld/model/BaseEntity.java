@@ -25,4 +25,9 @@ public class BaseEntity implements Serializable {
         return this.id == null;
     }
 
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
+
 }
