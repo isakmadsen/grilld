@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Grilld Admin - all orders</title>
+    <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="margin_auto">
+        <h1><a class="btn_log" href="/logout" th:if="${session.logged == true && session.auth_type == employee}">log
+            out</a> Admin Panel - <a href="orders">orders</a></h1><br/>
+        <div class="flex" th:if="${orders != null}">
+            <table class="info_table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date Time</th>
+                    <th scope="col">Client tlf.</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="takeaway:${orders}">
+                    <td th:text="${takeaway.id}"></td>
+                    <td th:text="${takeaway.getDay()+' '+takeaway.getTime()}"></td>
+                    <td th:text="${takeaway.client.tlf}"></td>
+                    <td th:text="${takeaway.displayStatus()}"></td>
+                    <td><a class="btn_edit">Edit</a><a class="btn_delete"
+                                                       th:href="@{'orders/delete/' + ${takeaway.id}}">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div th:if="${message != null}">
+                <span class="msg" th:text="${message}"></span>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

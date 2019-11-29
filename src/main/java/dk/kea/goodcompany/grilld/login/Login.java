@@ -5,31 +5,29 @@ import dk.kea.goodcompany.grilld.model.NamedEntity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "login")
-
-
 public class Login extends NamedEntity {
 
-    @Column(name = "type_tlf")
-    @NotNull
-    private String type_tlf;
+    @Column(name = "type")
+    @NotEmpty
+    private String type;
 
     @Column(name = "password")
-    @NotNull
+    @NotEmpty
     private String password;
 
-    public Login() {
+    @Column(name = "telephone")
+    private String telephone;
+
+    public String getType() {
+        return type;
     }
 
-    public String getType_tlf() {
-        return type_tlf;
-    }
-
-    public void setType_tlf(String type_telf) {
-        this.type_tlf = type_telf;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getPassword() {
@@ -38,5 +36,13 @@ public class Login extends NamedEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 }

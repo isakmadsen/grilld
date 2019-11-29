@@ -1,0 +1,164 @@
+body {
+    margin: auto;
+    font-family: Arial;
+}
+
+header {
+    margin: auto;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    background-color: gainsboro;
+    justify-content: space-between;
+}
+
+#login {
+    margin: 20px 20px 0 0;
+}
+
+img {
+    display: block;
+}
+
+main {
+    display: flex;
+}
+
+a:active, a:hover, a:visited, a:link {
+    text-decoration: none;
+}
+
+.vertical_align_middle {
+    vertical-align: middle;
+}
+
+#msg {
+    position: fixed;
+    width: 180px;
+}
+
+.msg {
+    font-size: 20px;
+    position: fixed;
+    margin-left: 40px;
+}
+
+.submit_btn {
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: limegreen;
+    font-size: 18px;
+    font-weight: bold;
+    color: ghostwhite;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.menu-item {
+    flex-basis: 25%;
+    min-width: 260px;
+}
+
+.menu-item div {
+    height: 300px;
+    padding: 15px;
+    margin: 0 15px 0 15px;
+    background-color: lightgray;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-evenly {
+    justify-content: space-between;
+}
+
+.margin_auto {
+    margin: auto;
+}
+
+.message {
+    margin: 10px 0 0 0;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
+.margin-top-130-auto {
+    margin: 130px auto;
+}
+
+.btn_edit, .btn_delete, .btn_add, .btn_bck, .btn_book, .btn_log {
+    cursor: pointer;
+    border: 0 none;
+    border-radius: 9px;
+    color: #ffffff;
+    padding: 8px;
+    margin: 5px;
+}
+
+.btn_edit {
+    background-color: green;
+}
+
+.btn_delete {
+    background-color: crimson;
+}
+
+.btn_add {
+    background-color: blue;
+}
+
+.btn_bck {
+    background-color: gold;
+}
+
+.btn_book {
+    background-color: darkorange;
+}
+
+.btn_log {
+    background-color: darkorchid;
+}
+
+.btn_edit:hover, btn_delete:hover {
+    transition: all 150ms linear;
+    opacity: .85;
+}
+
+.info_table {
+    min-width: 700px;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.info_table td {
+    padding: 12px;
+    text-align: center;
+}
+
+.info_table td:last-child {
+    text-align: right;
+}
+
+.info_table td {
+    border-top: 1px solid lightgray;
+}
