@@ -6,10 +6,13 @@
     <title>Grilld</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.getElementsByTagName("html")[0].className += " js";</script>
+    <link rel="stylesheet" href="../../static/assets/css/style.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/"><img style="max-height: 60px" src="/images/logo2.png" alt=""></a>
+        <a class="navbar-brand" href="/static"><img style="max-height: 60px" src="/static/images/logo2.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/static">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Restaurants</a>
@@ -57,20 +60,15 @@
         <th style="width: 150px;">Dish</th>
         <th style="width: 150px;">Description</th>
         <th style="width: 150px;">Price</th>
-        <th style="width: 150px;">Category</th>
-        <th style="width: 150px;">Type</th>
+        <th style="width: 150px;">Quantity</th>
     </tr>
     </thead>
 
     <tbody>
-        <tr th:each="result : ${selections}">
-            <td>
-                <a th:href="@{/menu/__${result.id}__}" th:text="${result.name}"></a>
-            </td>
+        <tr th:each="result : ${takeaway}">
+            <td th:text="${result.name}"></td>
             <td th:text="${result.description}"></td>
             <td th:text="${result.price}"></td>
-            <td th:text="${result.category}"></td>
-            <td th:text="${result.type}"></td>
         </tr>
     </tbody>
 </table>
