@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 @Entity
 @Table(name="reservation")
-public class OrderTable extends BaseEntity {
+public class ReservationTable extends BaseEntity {
 
 
     @Column(name="amountOfPersons")
@@ -25,7 +25,7 @@ public class OrderTable extends BaseEntity {
     private LocalDateTime booked_on;
 
 
-    public OrderTable() {
+    public ReservationTable() {
     }
 
     public int getAmountOfPersons() {
