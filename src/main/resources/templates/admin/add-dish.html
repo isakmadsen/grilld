@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Grilld Admin - add dish</title>
+    <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="margin_auto">
+        <h1>Admin Panel - add dish</a></h1><br/>
+        <form action="/admin/dishes/add-dish" method=POST th:if="${dishForm != null}" th:object="${dishForm}">
+            <div class="flex flex_">
+                <div>
+                    Name: <br/><input placeholder="name" required th:field="${dishForm.name}" type="text"/>
+                </div>
+                <div>
+                    Meal type: <br>
+                    <select required th:field="${dishForm.meal.id}">
+                        <option th:each="meal:${meals}" th:text="${meal.type}" th:value="${meal.id}"></option>
+                    </select>
+                </div>
+                <div>
+                    Price: <br/><input placeholder="price" required th:field="${dishForm.price}" type="text"/>
+                </div>
+                <div>
+                    Description: <br/><textarea placeholder="description" required
+                                                th:field="${dishForm.desc}"></textarea>
+                </div>
+            </div>
+            <div class="flex space-between">
+                <button class="btn_edit" type="submit">Add</button>
+                <a class="btn_bck" th:href="@{/admin/dishes}">Back</a>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>

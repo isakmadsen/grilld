@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Grilld</title>
+    <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div id="logo"><a href="/"><img alt="" height="125px;" src="/img/grilld.png"/></a></div>
+    <div>
+        <h2><a href="">Restaurants - </a><a href="">Reservations - </a><a href="">Take Away - </a><a href="">Menu</a>
+        </h2>
+    </div>
+    <div id="login">
+        <h1 th:if="${session.logged == null}"><a href="/admin">Sign up | Log in</a></h1>
+        <h1 th:if="${session.logged == true}">
+            <span th:text="${session.auth_name}"></span>
+            <a class="btn_log" href="/logout">log out</a>
+        </h1>
+    </div>
+</header>
+<br/>
+
+<h1>Whatev</h1>
+
+<!--<main>
+    <div class="margin-top-130-auto">
+        <h1>Menu</h1>
+        <div id="menu" th:if="${dishes != null and !dishes.isEmpty()}">
+            <div class="menu-item" th:each="dish:${dishes}">
+                <div>
+                    <h2><span th:text="${dish.name}"></span></h2>
+                    <p th:text="${dish.meal.type} ?: '-'"></p>
+                    <p th:text="${dish.desc} ?: '-'"></p>
+                    <p th:text="${dish.price+' dkk'}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:if="${dishes == null or dishes.isEmpty()}">
+        <h3>Nothing found sorry</h3>
+    </div>
+</main>-->
+</body>
+</html>
