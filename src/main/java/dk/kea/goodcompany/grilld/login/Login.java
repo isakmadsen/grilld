@@ -12,8 +12,10 @@ import javax.validation.constraints.NotEmpty;
 public class Login extends NamedEntity {
 
     @Column(name = "type")
+
     @NotEmpty
     private String type;
+
 
     @Column(name = "password")
     @NotEmpty
