@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class ReservationController {
 
+    private ReservaitionRepo reservaitionRepo;
+
+    public ReservationController(ReservaitionRepo reservaitionRepo) {
+        this.reservaitionRepo = reservaitionRepo;
+    }
+
     @GetMapping("/reservation")
     public String showPage(Model model){
         model.addAttribute("orderTableForm", new OrderTable());
@@ -20,7 +26,11 @@ public class ReservationController {
 
     @PostMapping("/reservation")
     public String saveOne(@ModelAttribute OrderTable OrderTable){
-
+        OrderTable.setAmountOfPersons(OrderTable.getAmountOfPersons());
+        OrderTable.setBooked_on(OrderTable.getBooked_on());
+        OrderTable.setTelephone(OrderTable.getTelephone());
+        this.reservaitionRepo.save(OrderTable);
         return "redirect:/reservation";
     }
+
 }

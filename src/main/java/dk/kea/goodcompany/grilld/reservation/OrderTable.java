@@ -1,23 +1,29 @@
 package dk.kea.goodcompany.grilld.reservation;
 
+import dk.kea.goodcompany.grilld.model.BaseEntity;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+@Entity
+@Table(name="reservation")
+public class OrderTable extends BaseEntity {
 
-public class OrderTable {
 
-    private int id, amountOfPersons;
+    @Column(name="amountOfPersons")
+    @NotNull
+    private int amountOfPersons;
+    @Column(name="telephone")
+    @NotNull
     private String telephone;
     @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+    @Column(name="booked_on")
+    @NotNull
     private LocalDateTime booked_on;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public OrderTable() {
     }

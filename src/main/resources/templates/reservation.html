@@ -53,10 +53,11 @@
         </form>
     </div>
 </nav>
-<h6>Amount of persons</h6>
+
 <form method="post" th:object="${orderTableForm}" action="/reservation">Phone number: <br><br>
     <input type="number" name="phonenumber" th:field="${orderTableForm.telephone}"/> <br>
-<select th:field="${orderTableForm.amountOfPersons}">
+    <h6>Amount of persons</h6>
+    <select th:field="${orderTableForm.amountOfPersons}">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -71,7 +72,8 @@
 <br>
 <label for="reservedate">Date for reservation</label>
 <input type="text" id="reservedate" placeholder="01-01-2019 00:00" min="01-01-2019 00:00" max="01-01-2030 00:00" required th:field="${orderTableForm.booked_on}"/>
-    <button type="submit">Make Reservation</button>
+    <br>
+    <button type="submit" href="/">Make Reservation</button>
 </form>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
