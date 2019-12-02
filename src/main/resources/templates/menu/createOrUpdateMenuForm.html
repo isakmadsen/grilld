@@ -42,43 +42,48 @@
 
 
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-group">
           <input class="form-control mr-sm-2" type="search" placeholder="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
     </nav>
   <h2>Menu</h2>
-  <form th:object="${menu}" method="post" onsubmit=" return isEmpty(this)">
-    <div class="form-group">
-      <label for="dish">Dish</label>
-      <input  type="text" th:field="${menu.name}"  id="dish" placeholder="Dish">
-    </div>
-    <div class="form-group">
-      <label for="description">Description</label>
-      <input  type="text" th:field="${menu.description}"  id="description" placeholder="Description">
-    </div>
-    <div class="form-group">
-      <label for="price">Price</label>
-      <input  type="text" th:field="${menu.price}"  id="price" placeholder="Price">
-    </div>
-    <div class="form-group">
-      <label for="category">Category</label>
-      <input  type="text" th:field="${menu.category}"  id="category" placeholder="Category">
-    </div>
-    <div class="form-group">
-      <label for="type">Type</label>
-      <input  type="text" th:field="${menu.type}"  id="type" placeholder="Type">
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button
-          th:with="text=${menu['new']} ? 'Add Menu' : 'Update Menu'"
-          class="btn btn-default" type="submit" th:text="${text}">Add Menu</button>
-      </div>
-    </div>
-  </form>
+    <form th:object="${dish}" method="post" onsubmit=" return isEmpty(this)">
 
+      <div class="form-group">
+        <label for="dish">Dish</label>
+        <input type="text" th:field="${dish.name}" class="form-control" id="dish" placeholder="Enter dish">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input  type="text" th:field="${dish.description}" class="form-control" id="description" placeholder="Description">
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input  type="text" th:field="${dish.price}" class="form-control" id="price" placeholder="Price">
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input  type="text" th:field="${dish.category}" class="form-control" id="category" placeholder="Category">
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input  type="text" th:field="${dish.quantity}" class="form-control" id="quantity" placeholder="Category">
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <input  type="text" th:field="${dish.type}" class="form-control" id="type" placeholder="Type">
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button th:with="text=${dish['new']} ? 'Add Menu' : 'Update Menu'"
+                  class="btn btn-default" type="submit" th:text="${text}">Add Dish</button>
+        </div>
+      </div>
+
+    </form>
     <script>
       //function that checks if there is an empty field in the form
       function isEmpty(form){

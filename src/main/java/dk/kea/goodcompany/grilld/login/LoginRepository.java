@@ -9,6 +9,4 @@ import java.util.Collection;
 public interface LoginRepository extends Repository<Login, Integer>{
 
 
-    Collection<Login>findAllByName(String name);
-
 }

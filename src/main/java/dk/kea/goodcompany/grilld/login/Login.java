@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 
 public class Login extends NamedEntity {
 
-    @Column(name = "type_tlf")
+    @Column(name = "type")
     @NotNull
     private String type_tlf;
 

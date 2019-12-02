@@ -1,33 +1,33 @@
-package dk.kea.goodcompany.grilld.menu;
+package dk.kea.goodcompany.grilld.dish;
 
 import dk.kea.goodcompany.grilld.model.NamedEntity;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
-import java.util.List;
+import java.util.Set;
+
 
 @Entity
-@Table(name="menu")
-public class Menu extends NamedEntity {
+@Table(name = "dish")
+public class Dish extends NamedEntity {
 
-    @Column(name= "description"  )
-    @NotNull
+    @Column(name = "description")
+    @NotEmpty
     private String description;
 
     @Column(name = "price")
     @NotNull
-    private BigDecimal price;
+    private Double price;
 
     @Column(name = "category")
-    @NotNull
+    @NotEmpty
     private String category;
 
-    @Column(name= "type")
-    @NotNull
+    @Column(name = "type")
+    @NotEmpty
     private String type;
 
     @Column(name = "quantity")
@@ -35,8 +35,8 @@ public class Menu extends NamedEntity {
     private Integer quantity;
 
 
-
-
+    public Dish() {
+    }
 
     public String getDescription() {
         return description;
@@ -46,11 +46,11 @@ public class Menu extends NamedEntity {
         this.description = description;
     }
 
-    public BigDecimal getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -66,7 +66,9 @@ public class Menu extends NamedEntity {
         return type;
     }
 
-    public void setType(String type) { this.type = type; }
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public Integer getQuantity() {
         return quantity;
@@ -74,16 +76,6 @@ public class Menu extends NamedEntity {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Menu product = (Menu) o;
-
-        return product.getId().equals(product.getId());
     }
 
 

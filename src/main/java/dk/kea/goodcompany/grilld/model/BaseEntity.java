@@ -1,9 +1,8 @@
 package dk.kea.goodcompany.grilld.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import dk.kea.goodcompany.grilld.dish.Dish;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 
@@ -11,6 +10,7 @@ import java.io.Serializable;
 public class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
 
     public Integer getId() {
